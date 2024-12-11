@@ -43,7 +43,12 @@
     }
 
     function connectdatabase() {
-        return mysqli_connect("127.0.0.1:3306", "dhiraj", "pass.1.11", "todo");
+
+        $host = getenv('DB_HOST');
+        $user = getenv('DB_USER');
+        $password = getenv('DB_PASSWORD');
+        $dbname = getenv('DB_NAME');
+        // return mysqli_connect("127.0.0.1:3306", "dhiraj", "pass.1.11", "todo");
     }
 
     function loggedin() {
