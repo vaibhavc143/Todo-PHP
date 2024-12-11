@@ -1,0 +1,15 @@
+versio: '1'
+service:
+  php-app:
+  build: .
+  container_name: php-app
+  ports:
+    -"8080:80"
+  environment:
+    - DB_HOST=todo-db.clmco0iugmvl.ap-south-1.rds.amazonaws.com
+    - DB_NAME=todo-db
+    - DB_USER=admin
+    - DB_PASSWORD=8xAnMGNMTip8a7YIdqaN
+  volume:
+  - ./app:/var/www/html
+  restart: always
